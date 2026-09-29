@@ -1,0 +1,23 @@
+version: '3.8'
+
+# volumes:
+#   postgres-data:
+
+networks:
+    dev_network:
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - ../..:/workspaces:cached
+      
+    command: sleep infinity
+
+    # network_mode: service:db
+    # networks:
+    #   - dev_network
+
